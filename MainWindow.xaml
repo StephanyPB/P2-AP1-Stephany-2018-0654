@@ -1,0 +1,25 @@
+﻿<Window x:Class="P2_AP1_Stephany_2018_0654.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:P2_AP1_Stephany_2018_0654"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <Menu Height="18">
+                <MenuItem Header="Registros">
+
+                    <MenuItem x:Name="ProyectoMenuItem" Header="Registro De Proyectos"  Click="ProyectoMenuItem_Click"></MenuItem>
+
+                </MenuItem>
+                <MenuItem Header="Consultas">
+
+                    <MenuItem x:Name="ProyectosConsultasItem" Header="Consulta de Proyectos"  Click="ProyectosConsultasItem_Click"></MenuItem>
+                    <MenuItem x:Name="TareaConsultasItem"  Header="Consulta Tareas" Click="TareaConsultasItem_Click" ></MenuItem>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+    </Grid>
+</Window>
