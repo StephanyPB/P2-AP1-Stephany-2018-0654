@@ -23,8 +23,8 @@
                 <StackPanel Margin="5,0">
                     <Label Content="Filtro:" />
                     <ComboBox x:Name="FiltroComboBox" Width="100">
-                        <ComboBoxItem Content="ProyectoId"/>
-                        <ComboBoxItem Content=""/>
+                        <ComboBoxItem  Content="ProyectoId"/>
+                        <ComboBoxItem Content="DescripcionProyecto"/>
                     </ComboBox>
                 </StackPanel>
 
@@ -34,7 +34,7 @@
 
                 </StackPanel>
 
-                <Button x:Name="BuscarButton" Height="34" Width="75" Click="BuscarButton_Click_1" >
+                <Button x:Name="BuscarButton" Height="34" Width="75" Click="BuscarButton_Click" >
                     <StackPanel Orientation="Horizontal" >
                         <Image Source="/Resources/Buscar.png"/>
                         <Label Content="Buscar" />
@@ -45,8 +45,9 @@
             <StackPanel HorizontalAlignment="Left" >
                 <DataGrid x:Name="DatosDataGrid" Height="350" Width="527" AutoGenerateColumns="False" IsReadOnly="True">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="" Binding="{Binding ProyectoId}"/>
-                        <DataGridTextColumn Header="" Binding="{Binding }"/>
+                        <DataGridTextColumn Header="Proyecto Id" Binding="{Binding ProyectoId}"/>
+                        <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha}"/>
+                        <DataGridTextColumn Header="Descripcion Proyecto" Binding="{Binding DescripcionProyecto}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>

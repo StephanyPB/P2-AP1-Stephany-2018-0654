@@ -10,10 +10,10 @@
         <StackPanel Orientation="Horizontal" Margin="0,0,10,29">
 
             <StackPanel Orientation="Vertical" Height="725" Width="760">
-                <Label Content="Aporte Id:"/>
+                <Label Content="Proyecto Id:"/>
 
                 <StackPanel Orientation="Horizontal">
-                    <TextBox x:Name="AporteIdTextBox" Margin="5,0,0,0" Text="{Binding AporteId}" Width="100" Height="18"/>
+                    <TextBox x:Name="ProyectoIdTextBox" Margin="5,0,0,0" Text="{Binding ProyectoId}" Width="100" Height="18"/>
                     <Button x:Name="BuscarButton" Click="BuscarButton_Click" Margin="5,0"  >
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Resources/Buscar.png"/>
@@ -28,7 +28,7 @@
 
                 <StackPanel Orientation="Horizontal">
                     <Label x:Name="DescripcionLabel" Content="Descripcion De Proyecto" Margin="0,5,0,0"/>
-                    <TextBox x:Name="DescricpionProyectoTextBox" Margin="-132,30,10,10" Width="510" Height="60" />
+                    <TextBox x:Name="DescricpionProyectoTextBox" Text="{Binding DescripcionProyecto}"  Margin="-132,30,10,10" Width="510" Height="60" />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
@@ -54,7 +54,9 @@
                 <StackPanel Orientation="Horizontal" Margin="5">
                     <DataGrid x:Name="DetalleDataGrid" ItemsSource="{Binding Detalle}" Height="133" AutoGenerateColumns="False" Width="504" >
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="TipoId" Binding="{Binding TipoId}"  />
+                            <DataGridTextColumn Header="Id" Binding="{Binding Id}" Visibility="Hidden"  />
+                            <DataGridTextColumn Header="ProyectoId" Binding="{Binding ProyectoId}" Visibility="Hidden"  />
+                            <DataGridTextColumn Header="TipoId" Binding="{Binding TareasId}"  />
                             <DataGridTextColumn Header="Tipo Tarea" Binding="{Binding TipoTarea}"  />
                             <DataGridTextColumn Header="Requerimiento" Binding="{Binding Requerimiento}" IsReadOnly="True" />
                             <DataGridTextColumn Header="Tiempo" Binding="{Binding Tiempo}" IsReadOnly="True"  />

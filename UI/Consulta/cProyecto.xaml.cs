@@ -25,9 +25,37 @@ namespace P2_AP1_Stephany_2018_0654.UI.Consulta
         {
             InitializeComponent();
         }
-       private void BuscarButton_Click_1(object sender, RoutedEventArgs e)
-       {
+        private void BuscarButton_Click(object sender, RoutedEventArgs e)
+        {
+            var listado = new List<Proyecto>();
 
-       }
+            if (CriterioTextBox.Text.Trim().Length > 0)
+            {
+                switch (FiltroComboBox.SelectedIndex)
+                {
+                    case 0: //ProyectoId
+                        int.TryParse(CriterioTextBox.Text, out int TareasId);
+                        listado = ProyectoBLL.GetList(a => a.ProyectoId == TareasId);
+                        break;
+
+                    case 1: //DEscripcion
+                        listado = ProyectoBLL.GetList(a => a.DescripcionProyecto.ToLower().Contains(CriterioTextBox.Text.ToLower()));
+                        break;
+                }
+            }
+            else
+            {
+                listado = ProyectoBLL.GetList(c => true);
+            }
+
+            if (DesdeDataPicker.SelectedDate != null)
+                listado = listado.Where(c => c.Fecha.Date >= DesdeDataPicker.SelectedDate).ToList();
+
+            if (HastaDatePicker.SelectedDate != null)
+                listado = listado.Where(c => c.Fecha.Date <= HastaDatePicker.SelectedDate).ToList();
+
+            DatosDataGrid.ItemsSource = null;
+            DatosDataGrid.ItemsSource = listado;
+        }
     }
 }
