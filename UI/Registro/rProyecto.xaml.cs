@@ -50,6 +50,8 @@ namespace P2_AP1_Stephany_2018_0654.UI.Registro
         public void Limpiar()
         {
             this.Proyecto = new Proyecto();
+            TiempoTextBox.Text = string.Empty;
+            RequerimientoTareaTextBox.Text = string.Empty;
             LlenarCombo();
             Cargar();
         }

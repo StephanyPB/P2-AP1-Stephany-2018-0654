@@ -22,10 +22,10 @@ namespace P2_AP1_Stephany_2018_0654.DAL
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Tareas>().HasData(
-                new Tareas { TareasId = 1, TipoTarea = "Analisis", FechaIngreso = DateTime.Parse("28-11-2021") },
-                 new Tareas { TareasId = 2, TipoTarea = "Diseño", FechaIngreso = DateTime.Parse("11-11-2021") },
-                  new Tareas { TareasId = 3, TipoTarea = "Programacion", FechaIngreso = DateTime.Parse("21-11-2021") },
-                  new Tareas { TareasId = 4, TipoTarea = "Prueba", FechaIngreso = DateTime.Parse("08-11-2021") }
+                new Tareas { TareasId = 1, TipoTarea = "Analisis", FechaIngreso = DateTime.Now.AddDays(1) },
+                 new Tareas { TareasId = 2, TipoTarea = "Diseño", FechaIngreso = DateTime.Now.AddDays(1) },
+                  new Tareas { TareasId = 3, TipoTarea = "Programacion", FechaIngreso = DateTime.Now.AddDays(1) },
+                  new Tareas { TareasId = 4, TipoTarea = "Prueba", FechaIngreso = DateTime.Now.AddDays(1) }
                 );
         }
     }
